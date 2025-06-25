@@ -1,0 +1,245 @@
+/* Base Styles and Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    padding-bottom: 70px; /* Space for fixed bottom navbar */
+}
+#maincard{
+    left: 50px;
+    width:97%;
+    height: 200px;
+    display: flexbox;
+    justify-content: center;
+    margin: 10px 15px  ;
+    background-image: url();
+}
+/* Search Bar and Header Styling */
+.search-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search-wrapper {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.logo-wrapper {
+    margin-right: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+.logo-wrapper img{
+    display:flex ;
+    justify-content: center;
+    height: 75px;
+    width: 75px;
+}
+
+.header-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 12px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+/* Content Card Styling */
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.content-card {
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Image Section */
+.card-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.content-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* Card Content Section */
+.card-content {
+    padding: 20px 25px;
+}
+
+.card-content h1 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.card-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Bottom Navigation Bar */
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #777;
+    width: 33.333%;
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.nav-item span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Nav Item Hover Effect with transition from left */
+.nav-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(59, 157, 248, 0.356);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.nav-item:hover::before {
+    transform: translateX(100%);
+}
+
+.nav-item:hover {
+    color: #4a90e2;
+}
+
+.nav-item.active {
+    color: #4a90e2;
+}
+
+/* responsive adjustments */
+@media (max-width: 768px) {
+    .content-card {
+        width: 100%;
+        height: auto;
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+    
+    .card-content h1 {
+        font-size: 20px;
+    }
+    
+    .card-content p {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+    }
+    
+    .search-wrapper {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    .logo-wrapper {
+        margin-right: 0;
+    }
+}
